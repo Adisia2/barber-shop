@@ -1,22 +1,31 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Routes , Route} from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
-import About from './components/About';
+import AboutUs from './components/AboutUs';
 import Contact from './components/Contact';
 import Services from './components/Services'; 
+import Gallery from './components/Gallery';
+import Appointments from './components/Appointments';
+import './App.css';
 
 function App() {
   return (
-    <Router>
+    
+    <div>
       <NavBar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/services" component={Services} />
-      </Switch>
-    </Router>
+      <Routes>
+        
+        <Route  path="/home" element={<Home/>} />
+        <Route path="/AboutUs" element={<AboutUs/>} />
+        <Route path="/gallery" element={<Gallery/>} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="/services" element={<Services/>} />
+        <Route path="/appointments" element={<Appointments/>} />
+        <Route  path="/" element={<Home/>} />
+      </Routes>
+     </div> 
+   
   );
 }
 

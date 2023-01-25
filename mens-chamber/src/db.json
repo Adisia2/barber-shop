@@ -1,0 +1,79 @@
+{
+    "menHairstyles": [
+        {
+            "id": 1,
+            "name": "Short buzz cut",
+            "image": "https://www.pinterest.com/pin/439523244898326653/"
+        },
+        {
+            "id": 2,
+            "name": "Slicked back",
+            "image": "https://www.pinterest.com/pin/954340977261603355/"
+        },
+        {
+            "id": 3,
+            "name": "Spiky",
+            "image": "https://www.pinterest.com/pin/1050535050552468282/"
+        },
+        {
+            "id": 4,
+            "name": "Undercut",
+            "image": "https://www.pinterest.com/pin/741686632399490174/"
+        },
+        {
+            "id": 5,
+            "name": "Faded",
+            "image": "https://www.pinterest.com/pin/12736811438981772/"
+        },
+        {
+            "id": 6,
+            "name": "wavy",
+            "image": "https://www.pinterest.com/pin/733383120589056058/"
+        },
+        {
+            "id": 7,
+            "name": "congo man",
+            "image": "https://www.pinterest.com/pin/834995587177929078/"
+        },
+        {
+            "id": 8,
+            "name": "Afro",
+            "image": "https://www.pinterest.com/pin/505669864424645248/"
+        },
+        {
+            "id": 9,
+            "name": "Baby locks",
+            "image": "https://www.pinterest.com/pin/196610339979078935/"
+        },
+        {
+            "id": 10,
+            "name": "pogba",
+            "image": "https://www.pinterest.com/pin/9781324176235930/"
+        },
+        {
+            "id": 11,
+            "name": "craze",
+            "image": "https://www.pinterest.com/pin/33917803436523187/"
+        },
+        {
+            "id": 12,
+            "name": "Top G",
+            "image": "https://www.pinterest.com/pin/924012048524648699/"
+        },
+        {
+            "id": 13,
+            "name": "LA finest",
+            "image": "https://www.pinterest.com/pin/309904018119750247/"
+        },
+        {
+            "id": 14,
+            "name": "Beard gang",
+            "image": "https://www.pinterest.com/pin/536350636885270346/"
+        },
+        {
+            "id": 15,
+            "name": "Umbrella",
+            "image": "https://www.pinterest.com/pin/293719206959047506/"
+        }
+    ]
+}
