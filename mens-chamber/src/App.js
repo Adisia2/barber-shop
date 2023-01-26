@@ -6,7 +6,8 @@ import AboutUs from './components/AboutUs';
 import Contact from './components/Contact';
 import Services from './components/Services'; 
 import Gallery from './components/Gallery';
-import Appointments from './components/Appointments';
+
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -17,13 +18,16 @@ function App() {
       <Routes>
         
         <Route  path="/home" element={<Home/>} />
-        <Route path="/AboutUs" element={<AboutUs/>} />
-        <Route path="/gallery" element={<Gallery/>} />
-        <Route path="/contact" element={<Contact/>} />
         <Route path="/services" element={<Services/>} />
-        <Route path="/appointments" element={<Appointments/>} />
+        
+        <Route path="/gallery" element={<Gallery/>} />
+        <Route path="/AboutUs" element={<AboutUs/>} />
+        <Route path="/contact" element={<Contact/>} />
+        
+       
         <Route  path="/" element={<Home/>} />
       </Routes>
+      <Footer />
      </div> 
    
   );

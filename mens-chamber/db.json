@@ -1,0 +1,115 @@
+{
+  "menHairstyles": [
+      {
+          "id": 1,
+          "name": "Short buzz cut",
+          "image": "IMAGES/afro.jpeg"
+      },
+      {
+          "id": 2,
+          "name": "Slicked back",
+          "image": "IMAGES/slicked.jpeg"
+      },
+      {
+          "id": 3,
+          "name": "Spiky",
+          "image": "IMAGES/spiky.jpeg"
+      },
+      {
+          "id": 4,
+          "name": "Undercut",
+          "image": "IMAGES/undercut.jpeg"
+      },
+      {
+          "id": 5,
+          "name": "Faded",
+          "image": "IMAGES/faded.jpeg"
+      },
+      {
+          "id": 6,
+          "name": "wavy",
+          "image": "IMAGES/wavy.jpeg"
+      },
+      {
+          "id": 7,
+          "name": "congo man",
+          "image": "IMAGES/congoman.png"
+      },
+      {
+          "id": 8,
+          "name": "Afro",
+          "image": "IMAGES/afro.jpeg"
+      },
+      {
+          "id": 9,
+          "name": "Baby locks",
+          "image": "IMAGES/babylocks.jpeg"
+      },
+      {
+          "id": 10,
+          "name": "pogba",
+          "image": "IMAGES/pogba.jpeg"
+      },
+      {
+          "id": 11,
+          "name": "craze",
+          "image": "IMAGES/craze.jpeg"
+      },
+      {
+          "id": 12,
+          "name": "Top G",
+          "image": "IMAGES/top G.jpeg"
+      },
+      {
+          "id": 13,
+          "name": "LA finest",
+          "image": "IMAGES/LA finest.jpeg"
+      },
+      {
+          "id": 14,
+          "name": "Beard gang",
+          "image": "IMAGES/beard gang.jpeg"
+      },
+      {
+          "id": 15,
+          "name": "Umbrella",
+          "image": "IMAGES/umbrella.jpeg"
+      }
+  ],
+
+"services":[
+    {
+      "id": 1,
+      "name": "Hair Styling",
+      "image": "IMAGES/Hairstyling.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Hair coloring",
+      "image": "IMAGES/HairColoring.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Shaves",
+      "image": "IMAGES/Shaves.jpeg"
+    },
+    {
+      "id": 4,
+      "name": "Traditional warm towel",
+      "image": "IMAGES/Traditional Hot Towel Wet Shave .jpeg"
+    },
+    {
+      "id": 5,
+      "name": "Beard Trimming",
+      "image": "IMAGES/BeardTriming.jpeg"
+    },
+    {
+      "id": 6,
+      "name": "Facial Grooming",
+      "image": "IMAGES/FacialGrooming.jpeg"
+    }
+  
+    
+]
+
+}

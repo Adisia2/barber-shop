@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const linkStyles = {
     display: "inline-block",
-    width: "50px",
+    // width: "50px",
     padding: "12px",
     margin: "0 6px 6px",
     background: "black",
@@ -13,7 +13,7 @@ const linkStyles = {
 
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-primary">
+        <nav className="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
             <div className="container-fluid">
                 <NavLink className="navbar-brand" to="/Home" exact
                 style={linkStyles}
@@ -36,14 +36,6 @@ const Navbar = () => {
                             >Home</NavLink>
                         </li>
                       
-                        <li className="nav-item">
-                            <NavLink className="nav-Link" activeClassName="active" to="/AboutUs"
-                            style={linkStyles}
-                            activeStyle={{
-                            background: "black",
-                            }}
-                            >About Us</NavLink>
-                        </li>
                         
                         <li className="nav-item">
                         <NavLink className="nav-Link" activeClassName="active" to="/Services"
@@ -62,6 +54,15 @@ const Navbar = () => {
                             }}
                             >Gallery</NavLink>
                         </li>
+
+                        <li className="nav-item">
+                            <NavLink className="nav-Link" activeClassName="active" to="/AboutUs"
+                            style={linkStyles}
+                            activeStyle={{
+                            background: "black",
+                            }}
+                            >About Us</NavLink>
+                        </li>
                         
                         <li className="nav-item">
                             <NavLink className="nav-Link" activeClassName="active" to="/Contact"
@@ -72,14 +73,7 @@ const Navbar = () => {
                             >Contact</NavLink>
                         </li>
                        
-                        <li className="nav-item">
-                            <NavLink className="nav-Link" activeClassName="active" to="Appointments"
-                            style={linkStyles}
-                            activeStyle={{
-                            background: "black",
-                            }}
-                            >Appointments</NavLink>
-                        </li>
+                       
                      </ul>
                  </div>
             </div>
