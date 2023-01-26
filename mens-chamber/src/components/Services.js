@@ -52,7 +52,7 @@ return (
                     <img src={service.image} className="card-img-top" alt={service.name}/>
                     <div className="card-body">
                         <h5 className="card-title">{service.name}</h5>
-                        <p className="card-text">{service.description}</p>
+                        <p className="card-text">{service.price}</p>
                         <button onClick={() => chooseStyle(service)} type="button" className="btn btn-primary">Book</button>
                     </div>
                 </div>

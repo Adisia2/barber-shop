@@ -3,77 +3,93 @@
       {
           "id": 1,
           "name": "Short buzz cut",
-          "image": "IMAGES/afro.jpeg"
+          "image": "IMAGES/afro.jpeg",
+          "price": "Kshs 570"
       },
       {
           "id": 2,
           "name": "Slicked back",
-          "image": "IMAGES/slicked.jpeg"
+          "image": "IMAGES/slicked.jpeg",
+          "price": "Kshs 570"
       },
       {
           "id": 3,
           "name": "Spiky",
-          "image": "IMAGES/spiky.jpeg"
+          "image": "IMAGES/spiky.jpeg",
+          "price": "Kshs 570"
       },
       {
           "id": 4,
           "name": "Undercut",
-          "image": "IMAGES/undercut.jpeg"
+          "image": "IMAGES/undercut.jpeg",
+          "price": "Kshs 570"
       },
       {
           "id": 5,
           "name": "Faded",
-          "image": "IMAGES/faded.jpeg"
+          "image": "IMAGES/faded.jpeg",
+          "price": "Kshs 570"
       },
       {
           "id": 6,
           "name": "wavy",
-          "image": "IMAGES/wavy.jpeg"
+          "image": "IMAGES/wavy.jpeg",
+          "price": "Kshs 570"
       },
       {
           "id": 7,
           "name": "congo man",
-          "image": "IMAGES/congoman.png"
+          "image": "IMAGES/congoman.png",
+          "price": "Kshs 570"
       },
       {
           "id": 8,
           "name": "Afro",
-          "image": "IMAGES/afro.jpeg"
+          "image": "IMAGES/afro.jpeg",
+          "price": "Kshs 570"
       },
       {
           "id": 9,
           "name": "Baby locks",
-          "image": "IMAGES/babylocks.jpeg"
+          "image": "IMAGES/babylocks.jpeg",
+          "price": "Kshs 570"
       },
       {
           "id": 10,
           "name": "pogba",
-          "image": "IMAGES/pogba.jpeg"
+          "image": "IMAGES/pogba.jpeg",
+          "price": "Kshs 570"
       },
       {
           "id": 11,
           "name": "craze",
-          "image": "IMAGES/craze.jpeg"
+          "image": "IMAGES/craze.jpeg",
+          "price": "Kshs 570"
+          
       },
       {
           "id": 12,
           "name": "Top G",
-          "image": "IMAGES/top G.jpeg"
+          "image": "IMAGES/top G.jpeg",
+          "price": "Kshs 2700"
       },
       {
           "id": 13,
           "name": "LA finest",
-          "image": "IMAGES/LA finest.jpeg"
+          "image": "IMAGES/LA finest.jpeg",
+          "price": "Kshs 570"
       },
       {
           "id": 14,
           "name": "Beard gang",
-          "image": "IMAGES/beard gang.jpeg"
+          "image": "IMAGES/beard gang.jpeg",
+          "price": "Kshs 570"
       },
       {
           "id": 15,
           "name": "Umbrella",
-          "image": "IMAGES/umbrella.jpeg"
+          "image": "IMAGES/umbrella.jpeg",
+          "price": "Kshs 570"
       }
   ],
 
@@ -81,35 +97,43 @@
     {
       "id": 1,
       "name": "Hair Styling",
-      "image": "IMAGES/Hairstyling.jpeg"
+      "image": "IMAGES/Hairstyling.jpeg",
+      "price": "Kshs 750"
     },
     {
       "id": 2,
       "name": "Hair coloring",
-      "image": "IMAGES/HairColoring.jpeg"
+      "image": "IMAGES/HairColoring.jpeg",
+      "price": "Kshs 750"
     },
     {
       "id": 3,
       "name": "Shaves",
-      "image": "IMAGES/Shaves.jpeg"
+      "image": "IMAGES/Shaves.jpeg",
+      "price": "Kshs 750"
     },
     {
       "id": 4,
       "name": "Traditional warm towel",
-      "image": "IMAGES/Traditional Hot Towel Wet Shave .jpeg"
+      "image": "IMAGES/Traditional Hot Towel Wet Shave .jpeg",
+      "price": "Kshs 1300"
     },
     {
       "id": 5,
       "name": "Beard Trimming",
-      "image": "IMAGES/BeardTriming.jpeg"
+      "image": "IMAGES/BeardTriming.jpeg",
+      "price": "Kshs 1500"
     },
     {
       "id": 6,
       "name": "Facial Grooming",
-      "image": "IMAGES/FacialGrooming.jpeg"
+      "image": "IMAGES/FacialGrooming.jpeg",
+      "price": "Kshs 300"
     }
   
-    
-]
+    ], 
+    "contacts":[{
+        
+    }]
 
 }
