@@ -51,10 +51,11 @@ const Contacts = () => {
     }
 
     return (
-        <div className="container mt-5 pt-5 text-center float-center">
+        <div className="container mt-5 pt-5 text-center align-content-center">
             <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 align-content-center">
                     <form onSubmit={handleSubmit}>
+                        <h4>Appointment</h4>
                         <div className="form-group">
                             <label htmlFor="name">Name</label>
                             <input type="text" className="form-control" id="name" value={name} onChange={handleNameChange} />
@@ -70,6 +71,13 @@ const Contacts = () => {
                         <button type="submit" className="btn btn-primary P-4 mt-5">Submit</button>
                     </form>
                 </div>
+            </div>
+            <div className="contact-info">
+                <h3>Mens Chamber</h3>
+                <p>123 Main St</p>
+                <p>City, State Zip</p>
+                <p>Phone: 555-555-5555</p>
+                <p>Email: info@barbershop.com</p>
             </div>
         </div>
     );

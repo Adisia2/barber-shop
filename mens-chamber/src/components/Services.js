@@ -25,7 +25,7 @@ const removeStyle = service => {
 
 return (
     
-    <div className="container mt-5">
+    <div className="container mt-5  bg-secondary">
     <div className="col-10 p-4 bg-secondary mx-auto">
         <div className="row">                                                                                                                                                                                                                                  
         {selectedService.map(service => {
@@ -45,9 +45,10 @@ return (
     </div>
 
     <div className="row p-4 container">
+    {/* <div className=" bg-secondary "> */}
         {services.map(service => {
             return (
-                <div  key={service.id} className="card m text-center" style={{width:"18rem"}}>
+                <div  key={service.id} className="card m-3 text-center" style={{width:"18rem"}}>
                     <img src={service.image} className="card-img-top" alt={service.name}/>
                     <div className="card-body">
                         <h5 className="card-title">{service.name}</h5>
@@ -55,11 +56,13 @@ return (
                         <button onClick={() => chooseStyle(service)} type="button" className="btn btn-primary">Book</button>
                     </div>
                 </div>
-            )
-        }
+            )       
+        }       
+
         )}
+        </div>
     </div>
-    </div>
+    // </div>
     
 );
 };
