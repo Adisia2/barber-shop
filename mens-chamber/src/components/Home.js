@@ -5,7 +5,7 @@ import Contact from './Contact';
 
 const Home = () => {
     return (
-        <div className='p-5 mt-0' style={{
+        <div className='p-5 mt-0 home-bg' style={{
             backgroundImage: `url(${image})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',

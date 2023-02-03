@@ -6,6 +6,9 @@ import AboutUs from './components/AboutUs';
 import Contact from './components/Contact';
 import Services from './components/Services'; 
 import Gallery from './components/Gallery';
+import "./css/style.css";
+
+
 
 import Footer from './components/Footer';
 import './App.css';
@@ -23,7 +26,7 @@ function App() {
         <Route path="/gallery" element={<Gallery/>} />
         <Route path="/AboutUs" element={<AboutUs/>} />
         <Route path="/contact" element={<Contact/>} />
-        
+       
        
         <Route  path="/" element={<Home/>} />
       </Routes>

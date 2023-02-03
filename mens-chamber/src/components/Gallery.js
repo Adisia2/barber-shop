@@ -22,8 +22,8 @@ const Gallery = () => {
         <div className="row  mt-5">
             {images.map(image => {
                 return (
-                    <div key={image.id} className="card  m-3" style={{width:"18rem"}}>
-                        <img src={image.image} className="card-img-top" alt={image.name}/>
+                    <div key={image.id} className="card  m-3 " style={{width:"18rem"}}>
+                        <img src={image.image} className="card-img-top " alt={image.name}/>
                         <div className="card-body">
                             <h4 className="card-title">{image.name}</h4>
                             <h4 className="card-title">{image.price}</h4>
