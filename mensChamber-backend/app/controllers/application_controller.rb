@@ -48,7 +48,7 @@ class ApplicationController < Sinatra::Base
   # READ ALL
   get '/appointments' do
     appointments = Appointment.all
-    appointments.to_json
+    appointments.to_json(include: [:appointment,:service])
   end
 
   # READ ONE
