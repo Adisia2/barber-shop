@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Services() {
   const [services, setServices] = useState([]);
@@ -33,7 +34,13 @@ function Services() {
                 <h5 className="card-title">{service.name}</h5>
                 <p className="card-text">{service.price}</p>
                 <button type="button" className="btn btn-primary">
-                  Book Service
+                <NavLink
+                    className="btn btn-outline-light  "
+                    to="/Appointment"
+                    role="button"
+                  >
+                    Book service
+                  </NavLink>
                 </button>
               </div>
             </div>

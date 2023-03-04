@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Swal from 'sweetalert2';
+import { useParams } from 'react-router-dom';
 
 const Appointments = () => {
-    const [submitedData, setSubmitedData] = useState([]);
+    const { id } = useParams();
+    const [image, setImage] = useState({});
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [service, setService] = useState("");
     const [dateTime, setDateTime] = useState(new Date());
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/menHairstyles/${id}`)
+            .then(res => res.json())
+            .then(data => setImage(data));
+    }, [id])
 
     function handleNameChange(event) {
         setName(event.target.value);
@@ -46,86 +54,125 @@ const Appointments = () => {
             phone: phone,
             email: email,
             service: service,
-            dateTime: dateTime
+            dateTime: dateTime,
+            image: image
         };
-        setSubmitedData([...submitedData, formData]);
         setName("");
         setPhone("");
         setEmail("");
         setService("");
         setDateTime(new Date());
 
-        // Send the form data to your server or handle it in some other way
-        //post data to server
+        // Send the form data to your server or handle it
+        // locally
         fetch('http://localhost:5000/appointments', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(formData)
+            body: JSON.stringify(formData),
         })
-            .then(res => res.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
-                console.log(data);
                 Swal.fire({
                     icon: 'success',
-                    title: 'Appointment Submitted!',
-                    text: 'Your appointment has been submitted successfully.',
-                    confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
-                  })
-            }
-            )
+                    title: 'Success!',
+                    text: 'Appointment booked successfully!',
+                });
+            })
             .catch(error => {
-                console.log(error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong! Please try again later!',
+                });
+                console.error('There was an error!', error);
             });
     }
-
+    
 
     return (
-        <div className="container mt-5 pt-5 text-center align-content-center">
-            <div className="row">
-                <div className="col-md-6 align-content-center">
-                    <form onSubmit={handleSubmit}>
-                        <h4>Appointment</h4>
-                        <div className="form-group">
-                            <label htmlFor="name">Name</label>
-                            <input type="text" className="form-control" id="name" value={name} onChange={handleNameChange} />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="phone">Phone</label>
-                            <input type="tel" className="form-control" id="phone" value={phone} onChange={handlePhoneChange} />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="email">Email</label>
-                            <input type="email" className="form-control" id="email" value={email} onChange={handleEmailChange} />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="service">Service</label>
-                            <input type="text" className="form-control" id="service" value={service} onChange={handleServiceChange} />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="dateTime">Date Time</label>
-                            <br />
-                            <DatePicker
-                                selected={dateTime}
-                                onChange={handleDateTimeChange}
-                                showTimeSelect
-                                timeFormat="HH:mm"
-                                timeIntervals={30}
-                                dateFormat="MMMM d, yyyy h:mm aa"
-                                className="form-control"
-                            />
-                        </div>
-                        <button type="submit" className="btn btn-primary mt-3">Submit</button>
-                    </form>
+        <div className="container mt-5">
+          <div className="row justify-content-center">
+            <div className="col-md-8">
+              <div className="card">
+                <div className="card-header">
+                  <h4 className="card-title">Book Appointment</h4>
                 </div>
-               
+                <div className="card-body">
+                  <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                      <label htmlFor="name">Name</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="name"
+                        name="name"
+                        value={name}
+                        onChange={handleNameChange}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="phone">Phone Number</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="phone"
+                        name="phone"
+                        value={phone}
+                        onChange={handlePhoneChange}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="email">Email address</label>
+                      <input
+                        type="email"
+                        className="form-control"
+                        id="email"
+                        name="email"
+                        value={email}
+                        onChange={handleEmailChange}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="service">Service</label>
+                      <select
+                        className="form-control"
+                        id="service"
+                        name="service"
+                        value={service}
+                        onChange={handleServiceChange}
+                      >
+                        <option value="">Select a service</option>
+                        <option value="Haircut">Haircut</option>
+                        <option value="Shave">Shave</option>
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="dateTime">Date and Time</label>
+                      <br />
+                      <DatePicker
+                        selected={dateTime}
+                        onChange={handleDateTimeChange}
+                        showTimeSelect
+                        dateFormat="Pp"
+                      />
+                    </div>
+                    <button type="submit" className="btn btn-primary">
+                      Book Appointment
+                    </button>
+                  </form>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    );
-};
+      );
+    };
 
 export default Appointments;
-
-
