@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
     customer = Customer.create(params)
     customer.to_json
   end
- get "/" do 
+ get "/customers" do 
   customer= Customer.all
   customer.to_json
  end
@@ -41,14 +41,23 @@ class ApplicationController < Sinatra::Base
 # CRUD Operations for Appointments
  # CREATE
  post '/appointments' do
-    appointment = Appointment.create(customer_id: params[:customer_id], service_id: params[:service_id], date: params[:date], time: params[:time])
-    appointment.to_json
-  end
+  appointment = Appointment.create(
+    date: params[:date],
+    start_time: params[:start_time],
+    customer_id: params[:customer_id],
+    service_id: params[:service_id],
+    name: params[:name],
+    phone: params[:phone],
+    email: params[:email],
+    service: params[:service]
+  )
+  appointment.to_json
+end
 
   # READ ALL
   get '/appointments' do
     appointments = Appointment.all
-    appointments.to_json(include: [:appointment,:service])
+    appointments.to_json
   end
 
   # READ ONE
@@ -74,7 +83,7 @@ class ApplicationController < Sinatra::Base
   # CRUD Operations for Services
   get '/services' do
     services = Service.all
-    services.to_json
+    services.to_json(include:[:customers, :appointments])
   end
 
   get '/services/:id' do

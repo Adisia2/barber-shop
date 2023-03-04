@@ -1,5 +1,4 @@
 import React from "react";
-import background from "../images/bg.jpeg";
 import "../css/About.css"
 
 const AboutUs = () => {
