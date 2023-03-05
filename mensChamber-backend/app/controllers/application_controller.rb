@@ -83,7 +83,7 @@ end
   # CRUD Operations for Services
   get '/services' do
     services = Service.all
-    services.to_json(include:[:customers, :appointments])
+    services.to_json
   end
 
   get '/services/:id' do

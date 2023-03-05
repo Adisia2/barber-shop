@@ -3,12 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 function Services() {
   const [services, setServices] = useState([]);
-  const [selectedService, setSelectedService] = useState(null);
 
   useEffect(() => {
     async function fetchServices() {
       try {
-        const response = await fetch('http://localhost:5000/services');
+        const response = await fetch('http://localhost:9292/services');
         const data = await response.json();
         setServices(data);
       } catch (error) {
@@ -17,6 +16,15 @@ function Services() {
     }
     fetchServices();
   }, []);
+
+  async function handleDelete(id) {
+    try {
+      await fetch(`http://localhost:9292/services/${id}`, { method: 'DELETE' });
+      setServices(services.filter((service) => service.id !== id));
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <div className="container mt-5 bg-secondary">
@@ -34,13 +42,12 @@ function Services() {
                 <h5 className="card-title">{service.name}</h5>
                 <p className="card-text">{service.price}</p>
                 <button type="button" className="btn btn-primary">
-                <NavLink
-                    className="btn btn-outline-light  "
-                    to="/Appointment"
-                    role="button"
-                  >
+                  <NavLink className="btn btn-outline-light" to="/Appointment" role="button">
                     Book service
                   </NavLink>
+                </button>
+                <button type="button" className="btn btn-danger" onClick={() => handleDelete(service.id)}>
+                  Delete
                 </button>
               </div>
             </div>

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 
-const Gallery = () => {
+const Gallery = (props) => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
+  const {image,onAdd} = props;
 
   useEffect(() => {
     fetch("http://localhost:5000/menHairstyles")
@@ -39,6 +40,7 @@ const Gallery = () => {
               <div className="card-body">
                 <h4 className="card-title">{image.name}</h4>
                 <h4 className="card-title">{image.price}</h4>
+                <button onClick={()=>onAdd(image)} >Book</button>
               </div>
             </div>
           );
