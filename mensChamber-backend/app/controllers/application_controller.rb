@@ -1,19 +1,72 @@
 class ApplicationController < Sinatra::Base
-    set default_content_type: "application/json"
+  set default_content_type: "application/json"
 
-     # CREATE
+  # CREATE
   post '/customers' do
-    customer = Customer.create(params)
+    customer = Customer.create(
+      name: params[:name],
+      email: params[:email],
+      phone: params[:phone]
+    
+      
+
+    )
     customer.to_json
   end
- get "/customers" do 
-  customer= Customer.all
-  customer.to_json
- end
+
+  post '/services' do
+    service = Service.create(
+      name: params[:name],
+      description: params[:description],
+      price: params[:price],
+      image: params[:image]
+      
+    )
+    service.to_json
+  end
+
+  post '/appointments/' do
+    appointment = Appointment.create(
+      name: params[:name],
+      phone: params[:phone],
+      email: params[:email],
+      service: params[:service],
+      date: params[:date_time],
+      customer_id: params[:customer_id],
+      service_id: params[:service_id]
+    )
+    appointment.to_json
+  end
+
   # READ
-  get '/customers/:id' do
+  get "/customers" do 
+    customer= Customer.all
+    customer.to_json
+   end
+
+   get '/customers/:id' do
     customer = Customer.find_by(id: params[:id])
     customer ? customer.to_json : {message: 'Customer not found'}.to_json
+  end
+
+  get '/services' do
+    services = Service.all
+    services.to_json
+  end
+
+  get '/services/:id' do
+    service = Service.find(params[:id])
+    service.to_json
+  end
+
+  get '/appointments' do
+    appointments = Appointment.all
+    appointments.to_json
+  end
+
+  get '/appointments/:id' do
+    appointment = Appointment.find(params[:id])
+    appointment.to_json
   end
 
   # UPDATE
@@ -27,6 +80,26 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  patch '/services/:id' do
+    service = Service.find(params[:id])
+    service.update(params)
+    service.to_json
+  end
+
+  patch '/appointments/:id' do
+    appointment = Appointment.find(params[:id])
+    appointment.update(
+      name: params[:name],
+      phone: params[:phone],
+      email: params[:email],
+      service: params[:service],
+      date_time: params[:date_time],
+      customer_id: params[:customer_id],
+      service_id: params[:service_id]
+    )
+    appointment.to_json
+  end
+
   # DELETE
   delete '/customers/:id' do
     customer = Customer.find_by(id: params[:id])
@@ -38,87 +111,16 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-# CRUD Operations for Appointments
- # CREATE
- post '/appointments' do
-  appointment = Appointment.create(
-    date: params[:date],
-    start_time: params[:start_time],
-    customer_id: params[:customer_id],
-    service_id: params[:service_id],
-    name: params[:name],
-    phone: params[:phone],
-    email: params[:email],
-    service: params[:service]
-  )
-  appointment.to_json
-end
-
-  # READ ALL
-  get '/appointments' do
-    appointments = Appointment.all
-    appointments.to_json
+  delete '/services/:id' do
+    service = Service.find(params[:id])
+    service.destroy
+    { message: 'Service deleted' }.to_json
   end
 
-  # READ ONE
-  get '/appointments/:id' do
-    appointment = Appointment.find(params[:id])
-    appointment.to_json
-  end
-
-  # UPDATE
-  patch '/appointments/:id' do
-    appointment = Appointment.find(params[:id])
-    appointment.update(customer_id: params[:customer_id], service_id: params[:service_id], date: params[:date], time: params[:time])
-    appointment.to_json
-  end
-
-  # DELETE
   delete '/appointments/:id' do
     appointment = Appointment.find(params[:id])
     appointment.destroy
-    appointment.to_json
+    { message: 'Appointment deleted' }.to_json
   end
-
-  # CRUD Operations for Services
-  get '/services' do
-    services = Service.all
-    services.to_json
-  end
-
-  get '/services/:id' do
-    service = Service.find_by(id: params[:id])
-    if service
-      service.to_json
-    else
-      halt 404, { message:'Service not found' }.to_json
-    end
-  end
-
-  post '/services' do
-    service = Service.create(params)
-    status 201
-    service.to_json
-  end
-
-  patch '/services/:id' do
-    service = Service.find_by(id: params[:id])
-    if service
-      service.update(params.except(:_method))
-      service.to_json
-    else
-      halt 404, { message:'Service not found' }.to_json
-    end
-  end
-
-  delete '/services/:id' do
-    service = Service.find_by(id: params[:id])
-    if service
-      service.destroy
-      status 204
-    else
-      halt 404, { message:'Service not found' }.to_json
-    end
-  end
-
 end
+
