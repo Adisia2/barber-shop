@@ -7,7 +7,7 @@ function Services() {
   useEffect(() => {
     async function fetchServices() {
       try {
-        const response = await fetch('http://localhost:9292/services');
+        const response = await fetch('https://kinyozi.up.railway.app/services');
         const data = await response.json();
         setServices(data);
       } catch (error) {

@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import DatePicker from 'react-datepicker';
+import React, { useState,  } from 'react';
+
 import 'react-datepicker/dist/react-datepicker.css';
-import { useParams } from 'react-router-dom';
+
 
 const Appointments = () => {
-    const { id } = useParams();
+    
     
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
-    const [service, setService] = useState("");
-    const [date, setDate] = useState(new Date());
+    
 
  
 
@@ -26,13 +25,7 @@ const Appointments = () => {
         setEmail(event.target.value);
     }
 
-    function handleServiceChange(event) {
-        setService(event.target.value);
-    }
-
-    function handleDateTimeChange(date) {
-        setDate(date);
-    }
+  
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -55,7 +48,7 @@ const Appointments = () => {
 
         // Send the form data to your server or handle it
         // locally
-        fetch("http://localhost:9292/appointments/", {
+        fetch("https://kinyozi.up.railway.app/appointments/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
