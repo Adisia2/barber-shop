@@ -39,9 +39,9 @@ const Home = () => {
             <div>
               <h4>Contact Us</h4>
               <p>
-                Address: 123 Main St, Anytown USA<br />
-                Phone: 555-1234<br />
-                Email: info@barbershop.com
+                Address:Nairobi,Kenya<br />
+                Phone: 0742239193<br />
+                Email: johnsonvundy2@gmail.com
               </p>
             </div>
             <div className="ms-auto">
